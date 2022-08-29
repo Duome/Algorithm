@@ -17,7 +17,7 @@ class Solution(object):
             if x == 0:
                 return rev
             # 这里需要每次判断每次反转后是否超出64位
-            if rev < -2**31/10 + 1 or rev > 2**31/10:
+            if rev < -2**31 / 10 + 1 or rev > (2**31 - 1) / 10:
                 return 0
             # 取出x末尾的数字
             d = x % 10
