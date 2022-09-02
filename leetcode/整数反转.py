@@ -28,6 +28,29 @@ class Solution(object):
             x = (x - d) // 10
             rev = rev * 10 + d
 
+class Solution1(object):
+    def reverse(self, x):
+        """
+        :param x:
+        :return:
+        思路：
+            1、判断输入之是否是64位；
+            2、因给都是整数所以直接转化为列表，使用列表的反转功能（数字需要先转化为字符串，然后再转化为列表）；
+            3、判断反转后
+        """
+        if x < -2**31 or x > 2**31 - 1:
+            return 0
+        if x < 0:
+            res = list(str(x))[1:][::-1]
+            res = int('-' + ''.join(res))
+        else:
+            res = list(str(x))[::-1]
+            res = int(''.join(res))
+        if res < -2**31 or res > 2**31 - 1:
+            return 0
+        return res
+
+
 if __name__ == '__main__':
     S = Solution()
     r = S.reverse(-10)
